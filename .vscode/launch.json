@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+        "type": "fpDebug",
+        "request": "launch",
+        "name": "Launch Pascal-file hello",
+        // 执行文件的路径
+        "program": "${workspaceFolder}\\test\\hello.exe",
+        "preLaunchTask": "fpDebug Pascal", // 与 tasks.json 中label的名字相同即可
+    }, {
+        "type": "fpDebug",
+        "request": "launch",
+        "name": "Launch Pascal-file factorial",
+        // 执行文件的路径
+        "program": "${workspaceFolder}\\test\\factorial.exe",
+        "preLaunchTask": "fpDebug Pascal factorial", // 与 tasks.json 中label的名字相同即可
+    }]
+}

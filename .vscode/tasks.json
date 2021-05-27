@@ -1,0 +1,76 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+            "label": "fpDebug Pascal", // 这个名字任意  但是要与launch.json中的preLaunchTask一致
+            "type": "shell",
+            "windows": {
+                "command": "fpc", // 这里是free pascal编译器，由于电脑环境变量path中有fpc的路径，这里只需写名字fpc即可
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "args": [
+                "-g", // debug选项
+
+                // debug的文件，修改为自己的即可
+                "${workspaceFolder}\\test\\hello.pas",
+
+                {
+                    "value": "", // 这个还不知道干什么的，先直接删掉
+                    "quoting": "escape"
+                }
+            ],
+            "problemMatcher": {
+                "owner": "external",
+                "pattern": {
+                    "regexp": "^([\\w]+\\.(p|pp|pas))\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
+                    "file": 1,
+                    "line": 3,
+                    "column": 4,
+                    "message": 6
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "fpDebug Pascal factorial", // 这个名字任意  但是要与launch.json中的preLaunchTask一致
+            "type": "shell",
+            "windows": {
+                "command": "fpc", // 这里是free pascal编译器，由于电脑环境变量path中有fpc的路径，这里只需写名字fpc即可
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "args": [
+                "-g", // debug选项
+
+                // debug的文件，修改为自己的即可
+                "${workspaceFolder}\\test\\factorial.pas",
+
+                {
+                    "value": "", // 这个还不知道干什么的，先直接删掉
+                    "quoting": "escape"
+                }
+            ],
+            "problemMatcher": {
+                "owner": "external",
+                "pattern": {
+                    "regexp": "^([\\w]+\\.(p|pp|pas))\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
+                    "file": 1,
+                    "line": 3,
+                    "column": 4,
+                    "message": 6
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
